@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
 
@@ -12,7 +13,7 @@ const draws = document.querySelector('#draws');
 
 
 // initialize state
-let winsData = 0;
+let winData = 0;
 let lossData = 0;
 let drawData = 0;
 
@@ -47,17 +48,54 @@ button.addEventListener ('click', () => {
     console.log(player);
 
     //add function with nine different win loss draw scenarios
+
     //rock scenarios
-   
+    if (player === "rock" && computer === "rock") {
+        drawData++;
+        //console.log('hello');
+    }
+    if (player === "rock" && computer === "paper") {
+        lossData++;
+        //console.log('hello');
+    }
+    if (player === "rock" && computer === "scissors") {
+        winData++;
+        //console.log('hello');
+    }
+
     //paper scenarios
+    if (player === "paper" && computer === "rock") {
+        winData++;
+        //console.log('hello');
+    }
+    if (player === "paper" && computer === "paper") {
+        drawData++;
+        //console.log('hello');
+    }
+    if (player === "paper" && computer === "scissors") {
+        lossData++;
+        //console.log('hello');
+    }
 
     //scissors scenarios
+    if (player === "scissors" && computer === "scissors") {
+        drawData++;
+        //console.log('hello');
+    }
+    if (player === "scissors" && computer === "paper") {
+        winData++;
+        //console.log('hello');
+    }
+    if (player === "scissors" && computer === "rock") {
+        lossData++;
+        //console.log('hello');
+    }
 
-    //something
+
 
 
     //console wins draws and losses
-    console.log(winsData);
+    console.log(winData);
     console.log(lossData);
     console.log(drawData);
 
