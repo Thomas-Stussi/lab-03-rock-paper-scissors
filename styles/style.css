@@ -99,27 +99,11 @@ footer {
     box-shadow: var(--shadow);
 }
 
-buttonland {
-    display: grid;
-
+input {
+    display: none;
 }
 
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
+input:checked + img {
+    border: solid 4px black;
+}
 

@@ -33,29 +33,37 @@
             </ol>
         </section>
 
-        <section class="buttonland">
+        <div>
 
             <label>
                 Rock
-                <input type="radio" name="coin" value="heads" checked/>
-                <img height="100" src="http://placekitten.com/200/200"/>
+                <input type="radio" name="play" value="rock" checked/>
+                <img height="100" src="https://lh3.googleusercontent.com/proxy/1pUdXmIppNegbt2slSSTrtzeeSi0Frukt7G3HmFaAwNVQBszkfcCIo275M97PGJD8qD8rrVGvtRsoyoiKbVPChHB6G8Vvb4Aa7gvDC5oGpFjrAFHttMQnEHPMPi2mIXUN2uvLzd-XFkWQsemE7D7O6BwpqD_lD5ZUHc"/>
             </label>
-
+                
             <label>
                 Paper
-                <input type="radio" name="coin" value="heads" checked/>
-                <img height="100" src="http://placekitten.com/200/200"/>
+                <input type="radio" name="play" value="paper" checked/>
+                <img height="100" src="https://www3.bostonglobe.com//rw/Boston/2011-2020/WebGraphics/Metro/BostonGlobe.com/2018/05/rockpaperscissors/assets/paper--left.png"/>
             </label>
 
             <label>
                 Scissors
-                <input type="radio" name="coin" value="heads" checked/>
-                <img height="100" src="http://placekitten.com/200/200"/>
+                <input type="radio" name="play" value="scissors" checked/>
+                <img height="100" src="https://jowaynejosephs.github.io/Rock-Paper-Scissors/img/scissors.png"/>
             </label>
             
-        </section>
+        </div>
 
-        <section class="winlossdraw">
+        <div id="guess-button">
+            <button>Throw Down!</button>
+        </div>
+
+        <section class="wldDisplay">
+            <span id="winlosedraw">This is where the win loss draw message displays</span>
+            <span id="wins">You've won X times.</span>
+            <span id="losses">You've lost Y times.</span>
+            <span id="draws">You drew with the computer Z times.</span>
         </section>
 
 
