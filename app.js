@@ -20,4 +20,9 @@ button.addEventListener ('click', () => {
     const userGuess = checkedRadio.value;
     //console
     //console.log(userGuess);
-});
+
+    //create a randomizer for the computer
+    const random = Math.floor(Math.random() * 3);
+    //console.log(random);
+}
+);
