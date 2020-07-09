@@ -28,3 +28,4 @@ test('it should take in a number and return rock paper or scissors', function(as
     // Make assertions about what is expected versus the actual result
     assert.equal(expected, actual === 'rock' || actual === 'paper' || actual === 'scissors');
 });
+

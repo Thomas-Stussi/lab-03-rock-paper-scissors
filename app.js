@@ -9,7 +9,7 @@ const winLoseDraw = document.querySelector('#winlosedraw');
 const wins = document.querySelector('#wins');
 const losses = document.querySelector('#losses');
 const draws = document.querySelector('#draws');
-
+const reset = document.getElementById('reset-button');
 
 
 // initialize state
@@ -115,3 +115,7 @@ button.addEventListener ('click', () => {
 
 }
 );
+//add reset button
+reset.addEventListener('click', () => {
+    window.location.reload();
+});
