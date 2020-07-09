@@ -52,52 +52,65 @@ button.addEventListener ('click', () => {
     //rock scenarios
     if (player === "rock" && computer === "rock") {
         drawData++;
+        winLoseDraw.textContent = 'Rock ties Rock, its a draw!';
         //console.log('hello');
     }
     if (player === "rock" && computer === "paper") {
         lossData++;
+        winLoseDraw.textContent = 'Paper beats Rock, you lose!';
         //console.log('hello');
     }
     if (player === "rock" && computer === "scissors") {
         winData++;
+        winLoseDraw.textContent = 'Rock beats Scissors, you win!';
         //console.log('hello');
     }
 
     //paper scenarios
     if (player === "paper" && computer === "rock") {
         winData++;
+        winLoseDraw.textContent = 'Paper beats Rock, you win!';
         //console.log('hello');
     }
     if (player === "paper" && computer === "paper") {
         drawData++;
+        winLoseDraw.textContent = 'Paper ties Paper, its a draw!';
         //console.log('hello');
     }
     if (player === "paper" && computer === "scissors") {
         lossData++;
+        winLoseDraw.textContent = 'Scissors beats Paper, you lose!';
         //console.log('hello');
     }
 
     //scissors scenarios
     if (player === "scissors" && computer === "scissors") {
         drawData++;
+        winLoseDraw.textContent = 'Scissors ties Scissors, its a draw!';
         //console.log('hello');
     }
     if (player === "scissors" && computer === "paper") {
         winData++;
+        winLoseDraw.textContent = 'Scissors beats Paper, you lose!';
         //console.log('hello');
     }
     if (player === "scissors" && computer === "rock") {
         lossData++;
+        winLoseDraw.textContent = 'Rock beats Paper, you lose!';
         //console.log('hello');
     }
-
+    
+    //update spans to reflect new score
+    wins.textContent = `Wins: ${winData}`;
+    losses.textContent = `Losses: ${lossData}`;
+    draws.textContent = `Draws: ${drawData}`;
 
 
 
     //console wins draws and losses
-    console.log(winData);
-    console.log(lossData);
-    console.log(drawData);
+    //console.log(winData);
+    //console.log(lossData);
+    //console.log(drawData);
 
 
 }
