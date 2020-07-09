@@ -36,80 +36,89 @@ test('it should take in a number and return rock paper or scissors', function(as
 test('rock rock = draw', (expect) => {
     const player = 'rock';
     const computer = 'rock';
+    const expected = 'Rock ties Rock, its a draw!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'draw');  
+    expect.equal(actual, expected);  
 });
 
 test('rock paper = loss', (expect) => {
     const player = 'rock';
     const computer = 'paper';
+    const expected = 'Paper beats Rock, you lose!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'loss');  
+    expect.equal(actual, expected);  
 });
 
 test('rock scissors = win', (expect) => {
     const player = 'rock';
     const computer = 'scissors';
+    const expected = 'Rock beats Scissors, you win!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'win');  
+    expect.equal(actual, expected);  
 });
 
 test('paper rock = win', (expect) => {
     const player = 'paper';
     const computer = 'rock';
+    const expected = 'Paper beats Rock, you win!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'win');  
+    expect.equal(actual, expected);  
 });
 
 test('paper paper = draw', (expect) => {
     const player = 'paper';
     const computer = 'paper';
+    const expected = 'Paper ties Paper, its a draw!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'draw');  
+    expect.equal(actual, expected);  
 });
 
 test('paper scissors = loss', (expect) => {
     const player = 'paper';
     const computer = 'scissors';
+    const expected = 'Scissors beats Paper, you lose!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'loss');  
+    expect.equal(actual, expected);  
 });
 
 test('scissors rock = loss', (expect) => {
     const player = 'scissors';
     const computer = 'rock';
+    const expected = 'Rock beats Scissors, you lose!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'loss');  
+    expect.equal(actual, expected);  
 });
 
 test('scissors paper = win', (expect) => {
     const player = 'scissors';
     const computer = 'paper';
+    const expected = 'Scissors beats Paper, you lose!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'win');  
+    expect.equal(actual, expected);  
 });
 
 test('scissors scissors = draw', (expect) => {
     const player = 'scissors';
     const computer = 'scissors';
+    const expected = 'Scissors ties Scissors, its a draw!';
 
     const actual = checkResults(player, computer);
 
-    expect.equal(actual, 'draw');  
+    expect.equal(actual, expected);  
 });

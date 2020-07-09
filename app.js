@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
+import { checkResults } from './checkResults.js';
+ 
 
 // import functions and grab DOM elements
 
@@ -10,12 +12,14 @@ const wins = document.querySelector('#wins');
 const losses = document.querySelector('#losses');
 const draws = document.querySelector('#draws');
 const reset = document.getElementById('reset-button');
+const resetDiv = document.getElementById('resets');
 
 
 // initialize state
 let winData = 0;
 let lossData = 0;
 let drawData = 0;
+let numberOfResets = 0;
 
 // set event listeners to update state and DOM
 
@@ -23,12 +27,10 @@ button.addEventListener ('click', () => {
     //get the value of the currently selected radio
     const checkedRadio = document.querySelector('input:checked');
     const player = checkedRadio.value;
-    //console
-    //console.log(player);
+    
 
     //create a randomizer for the computer
     const getRandomThrow = Math.floor(Math.random() * 3);
-    //console.log(getRandomThrow);
 
     //create function that converts computerPlay into computerThrow
     function computerThrow() {
@@ -43,61 +45,16 @@ button.addEventListener ('click', () => {
         }
     }
     const computer = computerThrow();
+    const compareThrows = checkResults(player, computer);
 
-    //console.log(computer);
-    //console.log(player);
-
-    //add function with nine different win loss draw scenarios
-
-    //rock scenarios
-    if (player === "rock" && computer === "rock") {
+    winLoseDraw.textContent = compareThrows;
+    
+    if (compareThrows.includes('draw')) {
         drawData++;
-        winLoseDraw.textContent = 'Rock ties Rock, its a draw!';
-        //console.log('hello');
-    }
-    if (player === "rock" && computer === "paper") {
-        lossData++;
-        winLoseDraw.textContent = 'Paper beats Rock, you lose!';
-        //console.log('hello');
-    }
-    if (player === "rock" && computer === "scissors") {
+    } else if (compareThrows.includes('win')) {
         winData++;
-        winLoseDraw.textContent = 'Rock beats Scissors, you win!';
-        //console.log('hello');
-    }
-
-    //paper scenarios
-    if (player === "paper" && computer === "rock") {
-        winData++;
-        winLoseDraw.textContent = 'Paper beats Rock, you win!';
-        //console.log('hello');
-    }
-    if (player === "paper" && computer === "paper") {
-        drawData++;
-        winLoseDraw.textContent = 'Paper ties Paper, its a draw!';
-        //console.log('hello');
-    }
-    if (player === "paper" && computer === "scissors") {
+    } else if (compareThrows.includes('lose')) {
         lossData++;
-        winLoseDraw.textContent = 'Scissors beats Paper, you lose!';
-        //console.log('hello');
-    }
-
-    //scissors scenarios
-    if (player === "scissors" && computer === "scissors") {
-        drawData++;
-        winLoseDraw.textContent = 'Scissors ties Scissors, its a draw!';
-        //console.log('hello');
-    }
-    if (player === "scissors" && computer === "paper") {
-        winData++;
-        winLoseDraw.textContent = 'Scissors beats Paper, you lose!';
-        //console.log('hello');
-    }
-    if (player === "scissors" && computer === "rock") {
-        lossData++;
-        winLoseDraw.textContent = 'Rock beats Paper, you lose!';
-        //console.log('hello');
     }
     
     //update spans to reflect new score
@@ -105,18 +62,18 @@ button.addEventListener ('click', () => {
     losses.textContent = `Losses: ${lossData}`;
     draws.textContent = `Draws: ${drawData}`;
 
-
-
-    //console wins draws and losses
-    //console.log(winData);
-    //console.log(lossData);
-    //console.log(drawData);
-
-
 }
 );
 //add reset button
 reset.addEventListener('click', () => {
-    window.location.reload();
+    numberOfResets++;
+    winData = 0;
+    lossData = 0;
+    drawData = 0;
+
+    wins.textContent = `Wins: ${winData}`;
+    losses.textContent = `Losses: ${lossData}`;
+    draws.textContent = `Draws: ${drawData}`;
+    resetDiv.textContent = `Resets: ${numberOfResets}`;
 });
-//test for github
+//test for github``
