@@ -44,8 +44,8 @@ button.addEventListener ('click', () => {
     }
     const computer = computerThrow();
 
-    console.log(computer);
-    console.log(player);
+    //console.log(computer);
+    //console.log(player);
 
     //add function with nine different win loss draw scenarios
 
